@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Clairval</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: #eee7dc;
+      color: #1f1f1f;
+      font-family: Arial, sans-serif;
+    }
+
+    /* PREMIER ÉCRAN */
+    .hero {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero img {
+      width: min(320px, 65vw);
+      height: auto;
+    }
+
+    /* INDICATEUR DE SCROLL */
+    .scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, 8px);
+      }
+    }
+
+    /* DEUXIÈME SECTION */
+    .content {
+      min-height: 100vh;
+      padding: 100px 8%;
+      box-sizing: border-box;
+    }
+
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .content h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.05;
+      font-weight: 400;
+      max-width: 800px;
+      margin: 0 0 60px 0;
+    }
+
+    .content p {
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    .blocks {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-top: 80px;
+    }
+
+    .block h2 {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      margin-bottom: 15px;
+    }
+
+    .block p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .blocks {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .content {
+        padding: 70px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PREMIER ÉCRAN -->
+  <section class="hero">
+
+    <img src="logo.png" alt="Clairval">
+
+    <div class="scroll">↓</div>
+
+  </section>
+
+
+  <!-- DEUXIÈME ÉCRAN -->
+  <section class="content">
+
+    <div class="content-inner">
+
+      <h1>
+        La plupart des entreprises sont meilleures
+        que ce qu’elles projettent.
+      </h1>
+
+      <p>
+        J’identifie les écarts entre ce que vous êtes,
+        ce que vous dites et ce que le marché perçoit.
+        Je les transforme en leviers d’action.
+      </p>
+
+
+      <div class="blocks">
+
+        <div class="block">
+          <h2>CLARIFIER</h2>
+          <p>
+            Identifier les décalages entre ce que vous valez
+            et ce que le marché perçoit.
+          </p>
+        </div>
+
+        <div class="block">
+          <h2>ALIGNER</h2>
+          <p>
+            Faire converger direction, marketing et commercial
+            autour d’un même récit.
+          </p>
+        </div>
+
+        <div class="block">
+          <h2>ACCÉLÉRER</h2>
+          <p>
+            Passer de la recommandation à l’exécution
+            pour soutenir la croissance et la transformation.
+          </p>
+        </div>
+
+        <div class="block">
+          <h2>VALORISER</h2>
+          <p>
+            Renforcer la perception, réduire le risque perçu
+            et faire du capital marque un actif.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
