@@ -18,6 +18,7 @@
       font-family: Arial, sans-serif;
     }
 
+
     /* =========================
        PREMIER ÉCRAN
        ========================= */
@@ -34,6 +35,7 @@
       justify-content: center;
     }
 
+
     /* LOGO */
 
     .hero .logo {
@@ -43,17 +45,19 @@
       position: absolute;
       top: 25%;
       left: 50%;
+
       transform: translateX(-50%);
 
       z-index: 2;
     }
+
 
     /* PHOTO */
 
     .hero .photo {
       position: absolute;
 
-      width: min(700px, 70vw);
+      width: min(1400px, 90vw);
       height: auto;
 
       left: 50%;
@@ -64,10 +68,12 @@
       z-index: 1;
     }
 
+
     /* INDICATEUR DE SCROLL */
 
     .scroll {
       position: absolute;
+
       bottom: 30px;
       left: 50%;
 
@@ -80,7 +86,9 @@
       z-index: 3;
     }
 
+
     @keyframes bounce {
+
       0%, 100% {
         transform: translate(-50%, 0);
       }
@@ -88,11 +96,12 @@
       50% {
         transform: translate(-50%, 8px);
       }
+
     }
 
 
     /* =========================
-       DEUXIÈME SECTION
+       DEUXIÈME ÉCRAN
        ========================= */
 
     .content {
@@ -103,11 +112,13 @@
       box-sizing: border-box;
     }
 
+
     .content-inner {
       max-width: 1100px;
 
       margin: 0 auto;
     }
+
 
     .content h1 {
       font-size: clamp(36px, 5vw, 64px);
@@ -121,6 +132,7 @@
       margin: 0 0 60px 0;
     }
 
+
     .content p {
       font-size: 20px;
 
@@ -128,6 +140,7 @@
 
       max-width: 700px;
     }
+
 
     .blocks {
       display: grid;
@@ -139,6 +152,7 @@
       margin-top: 80px;
     }
 
+
     .block h2 {
       font-size: 18px;
 
@@ -146,6 +160,7 @@
 
       margin-bottom: 15px;
     }
+
 
     .block p {
       font-size: 16px;
@@ -164,13 +179,17 @@
 
       .hero .logo {
         width: min(280px, 65vw);
+
         top: 22%;
       }
 
+
       .hero .photo {
         width: 85vw;
+
         top: 60%;
       }
+
 
       .blocks {
         grid-template-columns: 1fr;
@@ -178,9 +197,11 @@
         gap: 50px;
       }
 
+
       .content {
         padding: 70px 7%;
       }
+
     }
 
   </style>
@@ -197,21 +218,28 @@
   <section class="hero">
 
     <!-- LOGO -->
+
     <img
       class="logo"
       src="logo.png"
       alt="Clairval"
     >
 
+
     <!-- PHOTO -->
+
     <img
       class="photo"
       src="photo_intro.jpg"
       alt=""
     >
 
+
     <!-- INDICATEUR DE SCROLL -->
-    <div class="scroll">↓</div>
+
+    <div class="scroll">
+      ↓
+    </div>
 
   </section>
 
@@ -225,10 +253,12 @@
 
     <div class="content-inner">
 
+
       <h1>
         La plupart des entreprises sont meilleures
         que ce qu’elles projettent.
       </h1>
+
 
       <p>
         J’identifie les écarts entre ce que vous êtes,
@@ -239,9 +269,12 @@
 
       <div class="blocks">
 
+
         <div class="block">
 
-          <h2>CLARIFIER</h2>
+          <h2>
+            CLARIFIER
+          </h2>
 
           <p>
             Identifier les décalages entre ce que vous valez
@@ -253,7 +286,9 @@
 
         <div class="block">
 
-          <h2>ALIGNER</h2>
+          <h2>
+            ALIGNER
+          </h2>
 
           <p>
             Faire converger direction, marketing et commercial
@@ -265,7 +300,9 @@
 
         <div class="block">
 
-          <h2>ACCÉLÉRER</h2>
+          <h2>
+            ACCÉLÉRER
+          </h2>
 
           <p>
             Passer de la recommandation à l’exécution
@@ -277,7 +314,9 @@
 
         <div class="block">
 
-          <h2>VALORISER</h2>
+          <h2>
+            VALORISER
+          </h2>
 
           <p>
             Renforcer la perception, réduire le risque perçu
@@ -285,6 +324,7 @@
           </p>
 
         </div>
+
 
       </div>
 
