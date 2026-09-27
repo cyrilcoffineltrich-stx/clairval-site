@@ -7,6 +7,7 @@
   <title>Clairval</title>
 
   <style>
+
     html {
       scroll-behavior: smooth;
     }
@@ -28,25 +29,21 @@
       height: 100vh;
       position: relative;
       overflow: hidden;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
 
     /* LOGO */
 
     .hero .logo {
+      position: absolute;
+
       width: min(320px, 65vw);
       height: auto;
 
-      position: absolute;
-      top: 25%;
       left: 50%;
+      top: 25%;
 
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
 
       z-index: 2;
     }
@@ -180,7 +177,7 @@
       .hero .logo {
         width: min(280px, 65vw);
 
-        top: 22%;
+        top: 23%;
       }
 
 
@@ -217,8 +214,6 @@
 
   <section class="hero">
 
-    <!-- LOGO -->
-
     <img
       class="logo"
       src="logo.png"
@@ -226,16 +221,12 @@
     >
 
 
-    <!-- PHOTO -->
-
     <img
       class="photo"
       src="photo_intro.jpg"
       alt=""
     >
 
-
-    <!-- INDICATEUR DE SCROLL -->
 
     <div class="scroll">
       ↓
@@ -272,9 +263,7 @@
 
         <div class="block">
 
-          <h2>
-            CLARIFIER
-          </h2>
+          <h2>CLARIFIER</h2>
 
           <p>
             Identifier les décalages entre ce que vous valez
@@ -286,9 +275,7 @@
 
         <div class="block">
 
-          <h2>
-            ALIGNER
-          </h2>
+          <h2>ALIGNER</h2>
 
           <p>
             Faire converger direction, marketing et commercial
@@ -300,9 +287,7 @@
 
         <div class="block">
 
-          <h2>
-            ACCÉLÉRER
-          </h2>
+          <h2>ACCÉLÉRER</h2>
 
           <p>
             Passer de la recommandation à l’exécution
@@ -314,9 +299,7 @@
 
         <div class="block">
 
-          <h2>
-            VALORISER
-          </h2>
+          <h2>VALORISER</h2>
 
           <p>
             Renforcer la perception, réduire le risque perçu
