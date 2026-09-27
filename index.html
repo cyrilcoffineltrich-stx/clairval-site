@@ -6,6 +6,15 @@
 
   <title>Clairval</title>
 
+  <!-- Google Font : Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
 
     html {
@@ -16,7 +25,8 @@
       margin: 0;
       background-color: #eee7dc;
       color: #1f1f1f;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
     }
 
 
@@ -26,7 +36,7 @@
 
     .hero {
       height: 100vh;
-      height: 100svh; /* évite les sauts de hauteur sur mobile */
+      height: 100svh;
 
       display: flex;
       flex-direction: column;
@@ -36,8 +46,7 @@
     }
 
 
-    /* ZONE ENTRE LE HAUT DE LA PAGE ET LE HAUT DE LA PHOTO
-       Le logo est centré automatiquement dans cette zone. */
+    /* ZONE ENTRE LE HAUT DE LA PAGE ET LE HAUT DE LA PHOTO */
 
     .hero-top {
       flex: 1;
@@ -57,8 +66,6 @@
       width: min(320px, 65vw);
       height: auto;
 
-      /* Compensation optique : mets par exemple 10px
-         si le logo te paraît trop haut. 0 = centre exact. */
       transform: translateY(0px);
     }
 
@@ -70,18 +77,18 @@
       flex-shrink: 0;
 
       width: min(1400px, 90vw);
-      max-height: 60vh;   /* place maximale prise par la photo */
+      max-height: 60vh;
 
       object-fit: cover;
     }
 
 
-    /* ZONE SOUS LA PHOTO (flèche) */
+    /* ZONE SOUS LA PHOTO */
 
     .hero-bottom {
       flex-shrink: 0;
 
-      height: 110px;      /* espace sous la photo */
+      height: 110px;
 
       display: flex;
       align-items: center;
@@ -131,12 +138,18 @@
     }
 
 
+    /* TITRE PRINCIPAL */
+
     .content h1 {
+      font-family: 'Montserrat', sans-serif;
+
       font-size: clamp(36px, 5vw, 64px);
 
       line-height: 1.05;
 
       font-weight: 400;
+
+      letter-spacing: -0.035em;
 
       max-width: 800px;
 
@@ -144,14 +157,22 @@
     }
 
 
+    /* TEXTE INTRODUCTIF */
+
     .content p {
+      font-family: 'Montserrat', sans-serif;
+
       font-size: 20px;
 
       line-height: 1.6;
 
+      font-weight: 400;
+
       max-width: 700px;
     }
 
+
+    /* BLOCS */
 
     .blocks {
       display: grid;
@@ -164,8 +185,14 @@
     }
 
 
+    /* TITRES DES BLOCS */
+
     .block h2 {
+      font-family: 'Montserrat', sans-serif;
+
       font-size: 18px;
+
+      font-weight: 600;
 
       letter-spacing: 0.08em;
 
@@ -173,8 +200,14 @@
     }
 
 
+    /* TEXTE DES BLOCS */
+
     .block p {
+      font-family: 'Montserrat', sans-serif;
+
       font-size: 16px;
+
+      font-weight: 400;
 
       line-height: 1.5;
 
@@ -216,10 +249,17 @@
         padding: 70px 7%;
       }
 
+
+      .content h1 {
+        letter-spacing: -0.025em;
+      }
+
     }
 
 
-    /* Respecte le réglage « réduire les animations » */
+    /* =========================
+       ACCESSIBILITÉ
+       ========================= */
 
     @media (prefers-reduced-motion: reduce) {
 
