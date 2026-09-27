@@ -25,73 +25,87 @@
        ========================= */
 
     .hero {
-      width: 100%;
       height: 100vh;
-      position: relative;
+      height: 100svh; /* évite les sauts de hauteur sur mobile */
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
       overflow: hidden;
+    }
+
+
+    /* ZONE ENTRE LE HAUT DE LA PAGE ET LE HAUT DE LA PHOTO
+       Le logo est centré automatiquement dans cette zone. */
+
+    .hero-top {
+      flex: 1;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
 
     /* LOGO */
 
     .hero .logo {
-      position: absolute;
+      display: block;
 
       width: min(320px, 65vw);
       height: auto;
 
-      left: 50%;
-      top: 25%;
-
-      transform: translate(-50%, -50%);
-
-      z-index: 2;
+      /* Compensation optique : mets par exemple 10px
+         si le logo te paraît trop haut. 0 = centre exact. */
+      transform: translateY(0px);
     }
 
 
     /* PHOTO */
 
     .hero .photo {
-      position: absolute;
+      display: block;
+      flex-shrink: 0;
 
       width: min(1400px, 90vw);
-      height: auto;
+      max-height: 60vh;   /* place maximale prise par la photo */
 
-      left: 50%;
-      top: 62%;
+      object-fit: cover;
+    }
 
-      transform: translate(-50%, -50%);
 
-      z-index: 1;
+    /* ZONE SOUS LA PHOTO (flèche) */
+
+    .hero-bottom {
+      flex-shrink: 0;
+
+      height: 110px;      /* espace sous la photo */
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
 
     /* INDICATEUR DE SCROLL */
 
     .scroll {
-      position: absolute;
-
-      bottom: 30px;
-      left: 50%;
-
-      transform: translateX(-50%);
-
       font-size: 28px;
 
       animation: bounce 2s infinite;
-
-      z-index: 3;
     }
 
 
     @keyframes bounce {
 
       0%, 100% {
-        transform: translate(-50%, 0);
+        transform: translateY(0);
       }
 
       50% {
-        transform: translate(-50%, 8px);
+        transform: translateY(8px);
       }
 
     }
@@ -176,15 +190,18 @@
 
       .hero .logo {
         width: min(280px, 65vw);
-
-        top: 23%;
       }
 
 
       .hero .photo {
         width: 85vw;
 
-        top: 60%;
+        max-height: 55vh;
+      }
+
+
+      .hero-bottom {
+        height: 90px;
       }
 
 
@@ -197,6 +214,17 @@
 
       .content {
         padding: 70px 7%;
+      }
+
+    }
+
+
+    /* Respecte le réglage « réduire les animations » */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .scroll {
+        animation: none;
       }
 
     }
@@ -214,11 +242,15 @@
 
   <section class="hero">
 
-    <img
-      class="logo"
-      src="logo.png"
-      alt="Clairval"
-    >
+    <div class="hero-top">
+
+      <img
+        class="logo"
+        src="logo.png"
+        alt="Clairval"
+      >
+
+    </div>
 
 
     <img
@@ -228,8 +260,12 @@
     >
 
 
-    <div class="scroll">
-      ↓
+    <div class="hero-bottom">
+
+      <div class="scroll">
+        ↓
+      </div>
+
     </div>
 
   </section>
