@@ -164,6 +164,8 @@
       box-sizing: border-box;
     }
 
+    /* Même largeur et même alignement que la section 2 */
+
     .moments-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -175,30 +177,33 @@
       font-weight: 400;
       letter-spacing: -0.035em;
       max-width: 850px;
-      margin: 0 0 70px 0;
+      margin: 0 0 60px 0;
     }
 
-    /* QUATRE SITUATIONS STRATÉGIQUES */
+    /* QUATRE COLONNES IDENTIQUES À LA SECTION 2 */
 
     .moments-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 55px 60px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 40px;
     }
+
+    /* TITRES EN CAPITALES, MÊME STYLE QUE CLARIFIER, ALIGNER... */
 
     .moment h2 {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       line-height: 1.4;
+      text-transform: uppercase;
       margin: 0 0 15px 0;
     }
 
     .moment p {
       font-size: 16px;
       font-weight: 400;
-      line-height: 1.7;
+      line-height: 1.5;
       margin: 0;
-      max-width: 480px;
     }
 
     /* APPEL À L'ACTION */
@@ -211,7 +216,7 @@
     }
 
     /* =========================
-       MOBILE ET TABLETTES
+       TABLETTES ET MOBILES
        ========================= */
 
     @media (max-width: 800px) {
@@ -237,9 +242,13 @@
         letter-spacing: -0.025em;
       }
 
-      .blocks {
+      .blocks,
+      .moments-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 40px 30px;
+      }
+
+      .blocks {
         margin-top: 60px;
       }
 
@@ -250,10 +259,6 @@
       .moments h1 {
         letter-spacing: -0.025em;
         margin-bottom: 50px;
-      }
-
-      .moments-grid {
-        gap: 40px 30px;
       }
 
       .moments-cta {
