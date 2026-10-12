@@ -4,109 +4,300 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Clairval</title>
+  <title>Clairval — Stratégie, communication et création de valeur</title>
+  <meta name="description" content="Clairval accompagne les entreprises dans leur positionnement, leur transformation et la valorisation de leur perception.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --beige: #eee7dc;
+      --text: #1f1f1f;
+      --blue: #66ccff;
+    }
+
     html {
       scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      background-color: #eee7dc;
-      color: #1f1f1f;
-      font-family: Arial, sans-serif;
+      background: var(--beige);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     /* PREMIER ÉCRAN */
+
     .hero {
-      width: 100%;
       height: 100vh;
+      height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-top {
+      flex: 1;
+      width: 100%;
+      min-height: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
 
-    .hero img {
+    .hero .logo {
+      display: block;
       width: min(320px, 65vw);
       height: auto;
     }
 
-    /* INDICATEUR DE SCROLL */
+    .hero .photo {
+      display: block;
+      flex-shrink: 0;
+      width: min(1400px, 90vw);
+      max-height: 60vh;
+      max-height: 60svh;
+      object-fit: cover;
+    }
+
+    .hero-bottom {
+      flex-shrink: 0;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .scroll {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
       font-size: 28px;
       animation: bounce 2s infinite;
     }
 
     @keyframes bounce {
-      0%, 100% {
-        transform: translate(-50%, 0);
-      }
-
-      50% {
-        transform: translate(-50%, 8px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
     }
 
-    /* DEUXIÈME SECTION */
+    /* DEUXIÈME ÉCRAN */
+
     .content {
       min-height: 100vh;
       padding: 100px 8%;
       box-sizing: border-box;
     }
 
-    .content-inner {
+    .content-inner,
+    .moments-inner {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .content h1 {
+    .content h1,
+    .moments h1 {
       font-size: clamp(36px, 5vw, 64px);
       line-height: 1.05;
       font-weight: 400;
-      max-width: 800px;
-      margin: 0 0 60px 0;
+      letter-spacing: -0.035em;
+      max-width: 850px;
+      margin: 0 0 60px;
     }
 
-    .content p {
+    .content .intro {
       font-size: 20px;
       line-height: 1.6;
       max-width: 700px;
+      margin: 0;
     }
 
     .blocks {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 40px;
       margin-top: 80px;
     }
 
-    .block h2 {
+    .block h2,
+    .moment h2 {
       font-size: 18px;
+      font-weight: 700;
       letter-spacing: 0.08em;
-      margin-bottom: 15px;
+      line-height: 1.4;
+      margin: 0 0 15px;
     }
 
-    .block p {
+    .block p,
+    .moment p {
       font-size: 16px;
       line-height: 1.5;
       margin: 0;
     }
 
-    /* MOBILE */
+    /* TROISIÈME ÉCRAN */
+
+    .moments {
+      min-height: 100vh;
+      padding: 100px 8%;
+      box-sizing: border-box;
+    }
+
+    .moments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 40px;
+    }
+
+    .moment h2 {
+      text-transform: uppercase;
+    }
+
+    .moments-cta {
+      margin: 80px 0 0;
+      font-size: 20px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      background: var(--blue);
+      color: #ffffff;
+      padding: 16px 8%;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+    }
+
+    .site-footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+
+    .site-footer a:hover {
+      opacity: 0.7;
+    }
+
+    .footer-separator {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+
+    .site-footer a:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 5px;
+    }
+
+    /* TABLETTES */
+
     @media (max-width: 800px) {
-      .blocks {
-        grid-template-columns: 1fr;
-        gap: 50px;
+      .hero .logo {
+        width: min(280px, 65vw);
       }
 
-      .content {
+      .hero .photo {
+        width: 85vw;
+        max-height: 55vh;
+        max-height: 55svh;
+      }
+
+      .hero-bottom {
+        height: 90px;
+      }
+
+      .content,
+      .moments {
         padding: 70px 7%;
+      }
+
+      .content h1,
+      .moments h1 {
+        letter-spacing: -0.025em;
+      }
+
+      .blocks,
+      .moments-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 30px;
+      }
+
+      .blocks {
+        margin-top: 60px;
+      }
+
+      .moments h1 {
+        margin-bottom: 50px;
+      }
+
+      .moments-cta {
+        margin-top: 55px;
+        font-size: 18px;
+      }
+
+      .site-footer {
+        padding: 14px 7%;
+      }
+    }
+
+    /* MOBILES */
+
+    @media (max-width: 500px) {
+      .blocks,
+      .moments-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content .intro {
+        font-size: 18px;
+      }
+
+      .hero-bottom {
+        height: 75px;
+      }
+
+      .footer-inner {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+
+      .site-footer a,
+      .footer-separator {
+        font-size: 14px;
+      }
+    }
+
+    /* ACCESSIBILITÉ */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .scroll {
+        animation: none;
+      }
+
+      .site-footer a {
+        transition: none;
       }
     }
   </style>
@@ -115,18 +306,23 @@
 <body>
 
   <!-- PREMIER ÉCRAN -->
+
   <section class="hero">
+    <div class="hero-top">
+      <img class="logo" src="logo.png" alt="Clairval">
+    </div>
 
-    <img src="logo.png" alt="Clairval">
+    <img class="photo" src="photo_intro.jpg" alt="">
 
-    <div class="scroll">↓</div>
-
+    <div class="hero-bottom">
+      <div class="scroll" aria-hidden="true">↓</div>
+    </div>
   </section>
 
 
   <!-- DEUXIÈME ÉCRAN -->
-  <section class="content">
 
+  <section class="content">
     <div class="content-inner">
 
       <h1>
@@ -134,52 +330,104 @@
         que ce qu’elles projettent.
       </h1>
 
-      <p>
-        J’identifie les écarts entre ce que vous êtes,
-        ce que vous dites et ce que le marché perçoit.
-        Je les transforme en leviers d’action.
+      <p class="intro">
+        Entre ce que vous êtes, ce que vous dites et ce que le marché
+        perçoit, il y a un écart. Il vous coûte des clients, des talents
+        et de la valeur. Je le referme, et votre perception devient
+        un levier de croissance et de valeur.
       </p>
-
 
       <div class="blocks">
 
         <div class="block">
           <h2>CLARIFIER</h2>
-          <p>
-            Identifier les décalages entre ce que vous valez
-            et ce que le marché perçoit.
-          </p>
+          <p>Identifier les décalages entre ce que vous valez et ce que le marché perçoit.</p>
         </div>
 
         <div class="block">
           <h2>ALIGNER</h2>
-          <p>
-            Faire converger direction, marketing et commercial
-            autour d’un même récit.
-          </p>
+          <p>Faire converger direction, marketing et commercial autour d’un même récit.</p>
         </div>
 
         <div class="block">
           <h2>ACCÉLÉRER</h2>
-          <p>
-            Passer de la recommandation à l’exécution
-            pour soutenir la croissance et la transformation.
-          </p>
+          <p>Passer de la recommandation à l’exécution pour soutenir la croissance et la transformation.</p>
         </div>
 
         <div class="block">
           <h2>VALORISER</h2>
+          <p>Renforcer la perception, réduire le risque perçu et faire du capital marque un actif.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TROISIÈME ÉCRAN -->
+
+  <section class="moments">
+    <div class="moments-inner">
+
+      <h1>Les moments où la perception fait la valeur</h1>
+
+      <div class="moments-grid">
+
+        <div class="moment">
+          <h2>Opération de capital</h2>
           <p>
-            Renforcer la perception, réduire le risque perçu
-            et faire du capital marque un actif.
+            Entrée d’un fonds, levée, cession.
+            Votre plan de création de valeur doit aussi
+            se lire dans votre récit. Le multiple en dépend.
+          </p>
+        </div>
+
+        <div class="moment">
+          <h2>Rapprochement</h2>
+          <p>
+            Build-up, fusion, carve-out. Plusieurs marques,
+            plusieurs discours. Une seule histoire pour que
+            la synergie existe aussi aux yeux du marché.
+          </p>
+        </div>
+
+        <div class="moment">
+          <h2>Transformation</h2>
+          <p>
+            Repositionnement, nouvelle stratégie,
+            nouveau dirigeant. L’entreprise a changé.
+            Sa perception doit suivre.
+          </p>
+        </div>
+
+        <div class="moment">
+          <h2>Accélération de croissance</h2>
+          <p>
+            Nouveaux marchés, nouveaux segments,
+            nouvelle offre. Pour accélérer, le marché doit
+            comprendre immédiatement ce que vous apportez.
           </p>
         </div>
 
       </div>
 
-    </div>
+      <p class="moments-cta">
+        Vous êtes dans l’un de ces moments ? Parlons-en.
+      </p>
 
+    </div>
   </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <nav class="footer-inner" aria-label="Navigation de pied de page">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <span class="footer-separator" aria-hidden="true">—</span>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
