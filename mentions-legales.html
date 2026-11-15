@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mentions légales — Clairval</title>
+  <meta name="description" content="Mentions légales du site Clairval.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --beige: #eee7dc;
+      --text: #1f1f1f;
+      --blue: #66ccff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--beige);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+
+    .page {
+      min-height: calc(100vh - 52px);
+      padding: 80px 8% 90px;
+    }
+
+    .page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Barre supérieure */
+
+    .topbar {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    .logo {
+      display: block;
+      width: min(320px, 65vw);
+      height: auto;
+    }
+
+    .home-link {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 1;
+      transition: opacity 0.2s ease;
+    }
+
+    .home-link:hover {
+      opacity: 0.55;
+    }
+
+    .home-link:focus-visible,
+    .site-footer a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 5px;
+    }
+
+    /* Titre */
+
+    h1 {
+      margin: 0 0 55px;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 1.02;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+    }
+
+    /* Texte */
+
+    .legal-content {
+      max-width: 850px;
+    }
+
+    .legal-content p {
+      margin: 0 0 30px;
+      font-size: 15px;
+      line-height: 1.9;
+      font-weight: 400;
+    }
+
+    /* Pied de page */
+
+    .site-footer {
+      background: var(--blue);
+      color: #ffffff;
+      padding: 16px 8%;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+    }
+
+    .site-footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .site-footer a:hover {
+      opacity: 0.7;
+    }
+
+    .footer-separator {
+      font-size: 16px;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+
+    /* Version mobile */
+
+    @media (max-width: 700px) {
+      .page {
+        padding: 55px 7% 65px;
+      }
+
+      .topbar {
+        margin-bottom: 90px;
+      }
+
+      .logo {
+        width: min(260px, 65vw);
+      }
+
+      .home-link {
+        width: 32px;
+        height: 32px;
+        font-size: 27px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 9vw, 58px);
+        margin-bottom: 40px;
+      }
+
+      .legal-content p {
+        font-size: 14px;
+        line-height: 1.85;
+        margin-bottom: 25px;
+      }
+
+      .site-footer {
+        padding: 14px 7%;
+      }
+
+      .site-footer a,
+      .footer-separator {
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .home-link {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="page-inner">
+
+      <header class="topbar">
+        <a
+          class="home-link"
+          href="index.html"
+          aria-label="Retour à l’accueil"
+          title="Retour à l’accueil"
+        >×</a>
+
+        <a href="index.html" aria-label="Clairval — Accueil">
+          <img class="logo" src="logo.png" alt="Clairval">
+        </a>
+      </header>
+
+      <section aria-labelledby="legal-title">
+        <h1 id="legal-title">Mentions légales</h1>
+
+        <div class="legal-content">
+
+          <p>
+            Ut vel magna sit amet dui ultricies elementum. Nunc vitae neque dui.
+            Mauris fringilla dignissim ante non pharetra. Nulla non rutrum urna,
+            et placerat turpis. Praesent tempus dui magna, quis egestas arcu
+            gravida sit amet. Phasellus ipsum ligula, aliquam vitae elementum a,
+            euismod et eros. Nullam non metus vel est imperdiet condimentum.
+            Nam eu posuere felis, scelerisque facilisis arcu. Nunc quis tellus
+            efficitur, feugiat sapien eget, lobortis neque.
+          </p>
+
+          <p>
+            Nullam fringilla turpis sit amet mollis aliquam. Cras ornare felis
+            augue, aliquam mollis massa pretium venenatis. Vestibulum luctus
+            lacinia mollis. Vestibulum scelerisque dictum metus, nec fermentum
+            tortor fermentum ullamcorper. Integer dui nulla, iaculis id erat
+            consequat, malesuada pulvinar sem. Quisque mi urna, tempus sed
+            turpis posuere, vestibulum sodales urna. Sed in sagittis neque.
+            Pellentesque finibus massa in justo iaculis bibendum. In maximus
+            orci ut dolor accumsan, vel tincidunt est lacinia. Aliquam non arcu
+            consectetur, mattis eros quis, porta arcu. Aliquam eleifend finibus
+            tortor, sed maximus arcu tempor vel. Mauris augue nulla, tincidunt
+            in nibh a, mollis cursus orci. Suspendisse a euismod nulla, non
+            tincidunt ligula.
+          </p>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-inner" aria-label="Navigation de pied de page">
+      <a href="mentions-legales.html" aria-current="page">Mentions légales</a>
+      <span class="footer-separator" aria-hidden="true">—</span>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>
