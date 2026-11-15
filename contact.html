@@ -85,6 +85,7 @@
 
     .home-link:focus-visible,
     .contact-action:focus-visible,
+    .contact-email:focus-visible,
     .site-footer a:focus-visible {
       outline: 2px solid currentColor;
       outline-offset: 5px;
@@ -122,6 +123,20 @@
       margin: 0;
       font-size: 15px;
       line-height: 1.8;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-email:hover {
+      opacity: 0.65;
     }
 
     .contact-action {
@@ -221,6 +236,7 @@
       }
 
       .contact-action,
+      .contact-email,
       .home-link {
         transition: none;
       }
@@ -261,6 +277,13 @@
               Vous avez un projet, une ambition ou une problématique
               à éclaircir ? Prenons le temps d’en parler.
             </p>
+
+            <a
+              class="contact-email"
+              href="mailto:cyril@clairval.co"
+            >
+              cyril@clairval.co ↗
+            </a>
           </div>
 
           <div>
