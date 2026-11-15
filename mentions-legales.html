@@ -44,8 +44,6 @@
       margin: 0 auto;
     }
 
-    /* Barre supérieure */
-
     .topbar {
       position: relative;
       display: flex;
@@ -89,8 +87,6 @@
       outline-offset: 5px;
     }
 
-    /* Titre */
-
     h1 {
       margin: 0 0 55px;
       font-size: clamp(44px, 7vw, 82px);
@@ -99,20 +95,29 @@
       letter-spacing: -0.04em;
     }
 
-    /* Texte */
-
     .legal-content {
       max-width: 850px;
     }
 
+    .legal-content h2 {
+      margin: 38px 0 14px;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
     .legal-content p {
-      margin: 0 0 30px;
+      margin: 0 0 20px;
       font-size: 15px;
       line-height: 1.9;
       font-weight: 400;
     }
 
-    /* Pied de page */
+    .legal-content a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
     .site-footer {
       background: var(--blue);
@@ -146,8 +151,6 @@
       opacity: 0.8;
     }
 
-    /* Version mobile */
-
     @media (max-width: 700px) {
       .page {
         padding: 55px 7% 65px;
@@ -172,10 +175,14 @@
         margin-bottom: 40px;
       }
 
+      .legal-content h2 {
+        font-size: 16px;
+        margin-top: 32px;
+      }
+
       .legal-content p {
         font-size: 14px;
         line-height: 1.85;
-        margin-bottom: 25px;
       }
 
       .site-footer {
@@ -222,29 +229,58 @@
 
         <div class="legal-content">
 
+          <h2>Éditeur du site</h2>
+
           <p>
-            Ut vel magna sit amet dui ultricies elementum. Nunc vitae neque dui.
-            Mauris fringilla dignissim ante non pharetra. Nulla non rutrum urna,
-            et placerat turpis. Praesent tempus dui magna, quis egestas arcu
-            gravida sit amet. Phasellus ipsum ligula, aliquam vitae elementum a,
-            euismod et eros. Nullam non metus vel est imperdiet condimentum.
-            Nam eu posuere felis, scelerisque facilisis arcu. Nunc quis tellus
-            efficitur, feugiat sapien eget, lobortis neque.
+            Le site Clairval est édité par Cyril Coffin-Eltrich,
+            entrepreneur individuel (EI), immatriculé sous le numéro
+            SIREN 490 619 087.
           </p>
 
           <p>
-            Nullam fringilla turpis sit amet mollis aliquam. Cras ornare felis
-            augue, aliquam mollis massa pretium venenatis. Vestibulum luctus
-            lacinia mollis. Vestibulum scelerisque dictum metus, nec fermentum
-            tortor fermentum ullamcorper. Integer dui nulla, iaculis id erat
-            consequat, malesuada pulvinar sem. Quisque mi urna, tempus sed
-            turpis posuere, vestibulum sodales urna. Sed in sagittis neque.
-            Pellentesque finibus massa in justo iaculis bibendum. In maximus
-            orci ut dolor accumsan, vel tincidunt est lacinia. Aliquam non arcu
-            consectetur, mattis eros quis, porta arcu. Aliquam eleifend finibus
-            tortor, sed maximus arcu tempor vel. Mauris augue nulla, tincidunt
-            in nibh a, mollis cursus orci. Suspendisse a euismod nulla, non
-            tincidunt ligula.
+            Adresse de l'établissement : 
+            Paris 16e.
+          </p>
+
+          <p>
+            Directeur de la publication : Cyril Coffin-Eltrich.
+          </p>
+
+          <p>
+            Contact :
+            <a href="mailto:cyril@clairval.co">cyril@clairval.co</a>
+          </p>
+
+          <h2>Hébergement</h2>
+
+          <p>
+            Le site est hébergé par GitHub Pages, service de GitHub, Inc.,
+            88 Colin P. Kelly Jr. Street, San Francisco, CA 94107,
+            États-Unis.
+          </p>
+
+          <h2>Propriété intellectuelle</h2>
+
+          <p>
+            L'ensemble des contenus présents sur ce site, notamment les textes,
+            éléments graphiques, logos et visuels, est protégé par le droit
+            de la propriété intellectuelle. Toute reproduction ou utilisation,
+            totale ou partielle, sans autorisation préalable est interdite,
+            sous réserve des exceptions prévues par la loi.
+          </p>
+
+          <h2>Données personnelles</h2>
+
+          <p>
+            Les informations communiquées par e-mail à Clairval sont utilisées
+            uniquement pour répondre aux demandes de contact. Elles ne sont
+            ni vendues ni cédées à des tiers.
+          </p>
+
+          <p>
+            Pour toute question relative à vos données personnelles,
+            vous pouvez écrire à
+            <a href="mailto:cyril@clairval.co">cyril@clairval.co</a>.
           </p>
 
         </div>
