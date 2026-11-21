@@ -240,18 +240,22 @@
     /* PICTOGRAMME LINKEDIN */
 
     .footer-linkedin {
-      width: 21px;
-      height: 21px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--text) !important;
-      color: var(--white) !important;
-      border-radius: 2px;
-      font-family: Arial, sans-serif !important;
-      font-size: 16px !important;
-      font-weight: 700 !important;
-      line-height: 1;
+      width: 21px;
+      height: 21px;
+      padding: 0;
+      background: none;
+      border: none;
+      text-decoration: none;
+    }
+
+    .footer-linkedin img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
 
@@ -292,6 +296,7 @@
     /* ACCESSIBILITÉ */
 
     .footer-main-inner button:focus-visible,
+    .footer-main-inner a:focus-visible,
     .footer-bottom-inner a:focus-visible {
       outline: 2px solid var(--text);
       outline-offset: 4px;
@@ -390,7 +395,6 @@
       .footer-linkedin {
         width: 19px;
         height: 19px;
-        font-size: 14px !important;
       }
 
       .footer-bottom-inner {
@@ -592,14 +596,15 @@
           Parcours
         </button>
 
-        <button
-          type="button"
-          disabled
+        <a
+          href="https://www.linkedin.com/in/cyrilcoffineltrich/"
           class="footer-linkedin"
-          aria-label="LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn – Cyril Coffin Eltrich"
         >
-          in
-        </button>
+          <img src="InBug-Black.png" alt="LinkedIn">
+        </a>
 
       </nav>
 
