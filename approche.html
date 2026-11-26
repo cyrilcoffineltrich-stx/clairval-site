@@ -1,18 +1,18 @@
- 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
   <title>Approche — Clairval</title>
   <meta name="description" content="L'approche Clairval : clarifier, aligner, accélérer et valoriser la stratégie des entreprises.">
   <link rel="icon" type="image/png" href="favicon.png">
- 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- 
+
   <style>
     :root {
       --beige: #eee7dc;
@@ -20,12 +20,14 @@
       --blue: #80c9f3;
       --white: #ffffff;
       --accent: #9b493c;
+      --column-gap: clamp(30px, 4vw, 65px);
+      --page-inset: 8%;
     }
- 
+
     * {
       box-sizing: border-box;
     }
- 
+
     body {
       margin: 0;
       overflow-x: hidden;
@@ -34,20 +36,17 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
     }
- 
+
     /* STRUCTURE GÉNÉRALE */
- 
+
     .page {
-      /* Distance entre le bord de la fenêtre et le début du texte :
-         marge latérale de la page + espace libre sur les grands écrans */
-      --bleed: calc(max(0px, (100vw - 1450px) / 2) + 8vw);
       max-width: 1450px;
       margin: 0 auto;
-      padding: 80px 8% 100px;
+      padding: 80px var(--page-inset) 100px;
     }
- 
+
     /* EN-TÊTE */
- 
+
     .topbar {
       position: relative;
       display: flex;
@@ -55,13 +54,13 @@
       align-items: center;
       margin-bottom: 75px;
     }
- 
+
     .logo {
       display: block;
       width: min(320px, 65vw);
       height: auto;
     }
- 
+
     .back {
       position: absolute;
       left: 0;
@@ -73,44 +72,52 @@
       font-size: 32px;
       font-weight: 400;
     }
- 
+
     .back:hover {
       opacity: 0.55;
     }
- 
+
     /* COMPOSITION PRINCIPALE */
- 
+
     .approach-layout {
       display: grid;
-      grid-template-columns: 28% 1fr;
-      column-gap: 5%;
+      grid-template-columns: 43% 1fr;
+      column-gap: var(--column-gap);
       align-items: start;
     }
- 
-    /* PHOTO À GAUCHE : collée au bord de la fenêtre, jusqu'au texte */
- 
+
+    /* PHOTO : FORMAT ET TAILLE CONSERVÉS, DÉCALAGE À GAUCHE */
+
     .visual {
       grid-column: 1;
       grid-row: 1;
-      margin-left: calc(-1 * var(--bleed));
+      width: calc(100% + var(--page-inset) + var(--column-gap));
+      margin-left: calc(-1 * var(--page-inset));
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0;
     }
- 
+
     .visual img {
       display: block;
-      width: 100%;
-      height: 590px;
-      object-fit: cover;
+      width: min(520px, 100%);
+      height: auto;
+      object-fit: contain;
       object-position: center;
+      transform: translateX(-150px);
     }
- 
-    /* CONTENU À DROITE */
- 
+
+    /* CONTENU À DROITE : DÉCALÉ ET ÉLARGI */
+
     .content {
       grid-column: 2;
       grid-row: 1;
       min-width: 0;
+      margin-left: -100px;
+      width: calc(100% + 100px);
     }
- 
+
     h1 {
       max-width: 850px;
       margin: -10px 0 35px;
@@ -119,20 +126,20 @@
       font-weight: 400;
       letter-spacing: -0.035em;
     }
- 
+
     /* INTRODUCTION */
- 
+
     .intro p {
       margin: 0 0 18px;
       font-size: 20px;
       line-height: 1.6;
       font-weight: 400;
     }
- 
+
     .intro .lead {
       font-weight: 700;
     }
- 
+
     .method-line {
       margin-top: 25px;
       font-size: 18px;
@@ -140,9 +147,9 @@
       font-weight: 700;
       letter-spacing: 0.08em;
     }
- 
+
     /* LES QUATRE PILIERS */
- 
+
     .pillars {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -150,11 +157,11 @@
       row-gap: 65px;
       margin-top: 80px;
     }
- 
+
     .pillar {
       min-width: 0;
     }
- 
+
     .pillar h2 {
       margin: 0 0 10px;
       font-size: 18px;
@@ -162,32 +169,32 @@
       letter-spacing: 0.08em;
       line-height: 1.4;
     }
- 
+
     .pillar h3 {
       margin: 0 0 22px;
       font-size: 18px;
       line-height: 1.5;
       font-weight: 500;
     }
- 
+
     .pillar p {
       margin: 0 0 19px;
       font-size: 16px;
       line-height: 1.6;
       font-weight: 400;
     }
- 
+
     .pillar ul {
       margin: 0 0 22px;
       padding-left: 19px;
     }
- 
+
     .pillar li {
       margin-bottom: 7px;
       font-size: 15px;
       line-height: 1.55;
     }
- 
+
     .pillar .objective {
       margin-top: 20px;
       color: var(--accent);
@@ -195,15 +202,15 @@
       line-height: 1.55;
       font-weight: 700;
     }
- 
+
     /* FOOTER CLAIRVAL */
- 
+
     .site-footer {
       width: 100%;
       margin: 0;
       padding: 0;
     }
- 
+
     .footer-main-inner,
     .footer-bottom-inner {
       width: 84%;
@@ -214,16 +221,16 @@
       column-gap: 40px;
       align-items: center;
     }
- 
+
     .footer-main {
       width: 100%;
       background: var(--blue);
     }
- 
+
     .footer-main-inner {
       padding: 25px 0;
     }
- 
+
     .footer-main-inner a {
       justify-self: start;
       display: inline-flex;
@@ -239,18 +246,18 @@
       text-decoration: none;
       text-transform: uppercase;
     }
- 
+
     .footer-main-inner a.active {
       color: var(--accent);
     }
- 
+
     .footer-main-inner a:hover,
     .footer-bottom-inner a:hover {
       opacity: 0.7;
     }
- 
+
     /* LINKEDIN */
- 
+
     .footer-linkedin {
       display: flex;
       align-items: center;
@@ -259,33 +266,33 @@
       height: 21px;
       padding: 0;
     }
- 
+
     .footer-linkedin img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
- 
+
     /* SÉPARATION BLANCHE */
- 
+
     .footer-separation {
       width: 100%;
       height: 5px;
       background: var(--white);
     }
- 
+
     /* DEUXIÈME BANDEAU BLEU */
- 
+
     .footer-bottom {
       width: 100%;
       background: var(--blue);
     }
- 
+
     .footer-bottom-inner {
       padding: 13px 0;
     }
- 
+
     .footer-bottom-inner a {
       justify-self: start;
       width: fit-content;
@@ -294,196 +301,213 @@
       color: var(--white);
       text-decoration: none;
     }
- 
+
     /* ACCESSIBILITÉ */
- 
+
     a:focus-visible {
       outline: 2px solid var(--text);
       outline-offset: 4px;
     }
- 
+
     /* TABLETTES */
- 
+
     @media (max-width: 800px) {
       .page {
-        --bleed: 7vw;
-        padding: 70px 7%;
+        --page-inset: 7%;
+        --column-gap: 4%;
+        padding: 70px var(--page-inset) 80px;
       }
- 
+
       .approach-layout {
-        grid-template-columns: 30% 1fr;
-        column-gap: 5%;
+        grid-template-columns: 40% 1fr;
       }
- 
+
+      .visual {
+        width: calc(100% + var(--page-inset) + var(--column-gap));
+        margin-left: calc(-1 * var(--page-inset));
+      }
+
       .visual img {
-        height: 520px;
+        width: min(520px, 100%);
+        transform: translateX(-90px);
       }
- 
+
+      .content {
+        margin-left: -60px;
+        width: calc(100% + 60px);
+      }
+
       h1 {
         letter-spacing: -0.025em;
       }
- 
+
       .intro p {
         font-size: 18px;
       }
- 
+
       .method-line {
         font-size: 16px;
       }
- 
+
       .pillars {
         column-gap: 30px;
         row-gap: 50px;
         margin-top: 60px;
       }
- 
+
       .pillar h2 {
         font-size: 17px;
       }
- 
+
       .pillar h3 {
         font-size: 17px;
       }
- 
+
       .pillar p {
         font-size: 15px;
       }
- 
+
       .pillar li {
         font-size: 14px;
       }
- 
+
       .pillar .objective {
         font-size: 15px;
       }
- 
+
       .footer-main-inner,
       .footer-bottom-inner {
         width: 86%;
         column-gap: 30px;
       }
- 
+
       .footer-main-inner a {
         font-size: 14px;
       }
     }
- 
+
     /* MOBILES */
- 
+
     @media (max-width: 600px) {
       .page {
         padding: 55px 7% 65px;
       }
- 
+
       .topbar {
         margin-bottom: 65px;
       }
- 
+
       .logo {
         width: min(260px, 65vw);
       }
- 
+
       .back {
         font-size: 27px;
       }
- 
+
       .approach-layout {
         display: flex;
         flex-direction: column;
         gap: 35px;
       }
- 
+
       .content {
         order: 1;
         width: 100%;
+        margin-left: 0;
       }
- 
+
       .visual {
         order: 2;
         width: 100%;
-        margin-left: 0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
       }
- 
+
       .visual img {
         width: 100%;
-        height: 360px;
+        max-width: 520px;
+        height: auto;
+        transform: none;
       }
- 
+
       h1 {
         margin: 0 0 25px;
         font-size: clamp(42px, 10vw, 58px);
         letter-spacing: -0.035em;
       }
- 
+
       .intro p {
         font-size: 17px;
         line-height: 1.6;
       }
- 
+
       .method-line {
         font-size: 15px;
         line-height: 1.6;
         letter-spacing: 0.04em;
       }
- 
+
       .pillars {
         grid-template-columns: 1fr;
         row-gap: 45px;
         margin-top: 55px;
       }
- 
+
       .pillar h2 {
         font-size: 18px;
       }
- 
+
       .pillar h3 {
         font-size: 17px;
       }
- 
+
       .pillar p {
         font-size: 16px;
       }
- 
+
       .pillar li {
         font-size: 15px;
       }
- 
+
       .pillar .objective {
         font-size: 16px;
       }
- 
+
       .footer-main-inner,
       .footer-bottom-inner {
         width: 86%;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         column-gap: 10px;
       }
- 
+
       .footer-main-inner {
         padding: 22px 0;
       }
- 
+
       .footer-main-inner a {
         font-size: 10px;
         letter-spacing: 0.02em;
       }
- 
+
       .footer-linkedin {
         width: 19px;
         height: 19px;
       }
- 
+
       .footer-bottom-inner {
         padding: 13px 0;
       }
- 
+
       .footer-bottom-inner a {
         font-size: 13px;
       }
     }
- 
+
     /* MOUVEMENTS RÉDUITS */
- 
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -491,207 +515,200 @@
     }
   </style>
 </head>
- 
+
 <body>
- 
+
   <main class="page">
- 
+
     <!-- EN-TÊTE -->
- 
+
     <header class="topbar">
- 
+
       <a class="back" href="index.html" aria-label="Retour à l'accueil">×</a>
- 
+
       <a href="index.html" aria-label="Clairval - Accueil">
         <img class="logo" src="logo.png" alt="Clairval">
       </a>
- 
+
     </header>
- 
- 
+
     <!-- CONTENU PRINCIPAL -->
- 
+
     <section class="approach-layout">
- 
+
       <!-- PHOTO À GAUCHE -->
- 
+
       <div class="visual">
         <img src="photo_approche.jpg" alt="Architecture et lignes de perspective">
       </div>
- 
- 
+
       <!-- TEXTE ET PILIERS À DROITE -->
- 
+
       <div class="content">
- 
+
         <h1>Approche</h1>
- 
+
         <div class="intro">
- 
+
           <p class="lead">
             Une stratégie ne vaut que si elle est comprise par l’ensemble de vos parties prenantes
             (vos clients, vos équipes, vos investisseurs, vos fournisseurs et partenaires).
           </p>
- 
+
           <p>
             Quand elle l'est, la communication devient un levier de performance. Elle raccourcit les cycles de vente, attire les talents, accélère l'exécution et pèse sur la valeur de l'entreprise.
           </p>
- 
+
           <p>
             Je ne m'arrête pas à la recommandation : je la mets en œuvre, à vos côtés.
           </p>
- 
+
           <p>
             Mon approche tient en quatre temps. Ils s'enchaînent, mais on n'entre pas toujours par le premier : chaque entreprise commence là où se situe son enjeu.
           </p>
- 
+
           <div class="method-line">
             
           </div>
- 
+
         </div>
- 
- 
+
         <!-- LES QUATRE PILIERS -->
- 
+
         <div class="pillars">
- 
+
           <!-- CLARIFIER -->
- 
+
           <article class="pillar">
- 
+
             <h2>CLARIFIER</h2>
             <h3>Être compris. Être cru.</h3>
- 
+
             <p>
               Vos équipes ne racontent pas la même entreprise, et vos concurrents paraissent plus crédibles que vous ?
             </p>
- 
+
             <p>
               Je regarde l'entreprise telle qu'elle est perçue, pas telle qu'elle se voit. Entretiens avec les dirigeants, analyse concurrentielle, audit de perception : j'identifie les décalages et la crédibilité inexploitée.
             </p>
- 
+
             <ul>
               <li>Audit de marque et de perception</li>
               <li>Analyse concurrentielle et digitale</li>
               <li>Positionnement de marque</li>
               <li>Messages clés et promesse de marque</li>
             </ul>
- 
+
             <p class="objective">
               Objectif : Une entreprise plus lisible, plus crédible, plus différenciante.
             </p>
- 
+
           </article>
- 
- 
+
           <!-- ALIGNER -->
- 
+
           <article class="pillar">
- 
+
             <h2>ALIGNER</h2>
             <h3>Exécuter plus vite, dans le même sens.</h3>
- 
+
             <p>
               Votre Comex partage la stratégie, mais chacun la raconte à sa manière ?
             </p>
- 
+
             <p>
               Un positionnement ne sert à rien si les équipes ne le portent pas. Je formalise le récit stratégique et je fais converger la direction, le marketing et le commercial autour d'une même histoire.
             </p>
- 
+
             <ul>
               <li>Plateforme de marque et récit stratégique</li>
               <li>Architecture de marque et d'offres</li>
               <li>Messages par audience : clients, talents, investisseurs</li>
               <li>Communication interne et gouvernance de la communication</li>
             </ul>
- 
+
             <p class="objective">
               Objectif : une seule histoire, portée par tous, du Comex au terrain.
             </p>
- 
+
           </article>
- 
- 
+
           <!-- ACCÉLÉRER -->
- 
+
           <article class="pillar">
- 
+
             <h2>ACCÉLÉRER</h2>
             <h3>Vendre mieux. Attirer plus.</h3>
- 
+
             <p>
               Votre stratégie est validée, mais rien n'a vraiment bougé ?
             </p>
- 
+
             <p>
               Une stratégie ne crée de la valeur qu'une fois exécutée. Aux côtés du dirigeant et du Comex, je pilote les actions prioritaires qui soutiennent la croissance ou la transformation.
             </p>
- 
+
             <ul>
               <li>Plan de communication et marketing 360</li>
               <li>Stratégie de contenu et ligne éditoriale</li>
               <li>Dispositifs digitaux : site, réseaux sociaux, campagnes</li>
               <li>Supports et contenus commerciaux</li>
             </ul>
- 
+
             <p class="objective">
               Objectif : plus d'influence, un pipeline plus solide, des talents qui vous choisissent.
             </p>
- 
+
           </article>
- 
- 
+
           <!-- VALORISER -->
- 
+
           <article class="pillar">
- 
+
             <h2>VALORISER</h2>
             <h3>Réduire le risque perçu. Renforcer la valeur.</h3>
- 
+
             <p>
               Une levée, l'entrée d'un fonds ou une cession approche, et votre réputation ne reflète pas vos résultats ?
             </p>
- 
+
             <p>
               La perception influence le multiple. Je construis le récit de création de valeur et je prépare les moments décisifs, pour que ce que vous avez bâti se voie et se valorise.
             </p>
- 
+
             <ul>
               <li>Stratégie de réputation et relations presse</li>
               <li>Communication financière, M&A et LBO</li>
               <li>Prise de parole et visibilité du dirigeant</li>
               <li>Tableau de bord de perception</li>
             </ul>
- 
+
             <p class="objective">
               Objectif : un multiple mieux défendu et un capital marque durable.
             </p>
- 
+
           </article>
- 
+
         </div>
       </div>
     </section>
- 
+
   </main>
- 
- 
+
   <!-- FOOTER CLAIRVAL -->
- 
+
   <footer class="site-footer">
- 
+
     <div class="footer-main">
- 
+
       <nav class="footer-main-inner" aria-label="Navigation principale">
- 
+
         <a class="active" href="approche.html">Approche</a>
- 
+
         <a href="index.html#references">Références</a>
- 
+
         <a href="index.html#parcours">Parcours</a>
- 
+
         <a
           href="https://www.linkedin.com/in/cyrilcoffineltrich/"
           class="footer-linkedin"
@@ -701,27 +718,26 @@
         >
           <img src="InBug-Black.png" alt="LinkedIn">
         </a>
- 
+
       </nav>
- 
+
     </div>
- 
+
     <div class="footer-separation" aria-hidden="true"></div>
- 
+
     <div class="footer-bottom">
- 
+
       <nav class="footer-bottom-inner" aria-label="Navigation secondaire">
- 
+
         <a href="mentions-legales.html">Mentions légales</a>
- 
+
         <a href="contact.html">Contact</a>
- 
+
       </nav>
- 
+
     </div>
- 
+
   </footer>
- 
+
 </body>
 </html>
- 
